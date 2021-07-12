@@ -49,7 +49,7 @@ button {
     border-radius: 20px;
     padding: 3%;
     border: 0px;
-    background-color: rgb(218, 218, 218);
+    background-color: rgb(200, 200, 200);
 }
 
 .background {
@@ -76,12 +76,28 @@ button {
     margin-top: 20px;
 }
 
+
+.btn {
+    width: 90%;
+    padding: 5%;
+    background-color: #6337FF;
+    border-radius: 30px;
+    margin-top: 10px;
+    color: white;
+    position: relative;
+    left: 50%;
+    margin-left: -45%;
+}
+
 video {
     background-color: black;
+    height: 400px;
 }
 
 .box {
+    overflow: hidden;
     width: 80%;
+    height: 500px;
     position: relative;
     left: 50%;
     margin-bottom: 20px;
