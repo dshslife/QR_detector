@@ -15,15 +15,51 @@
     
 
 
-        <h1 class="text b8 f10">부스 관리<br>페이지</h1>
-     <div class='box shadow blur' style="height: 200px;">
+    <h1 class="text b8 f10">부스 관리<br>페이지</h1>
+    <div class='box shadow blur' style="height: 200px;">
 
 
+        <div id="test">
 
-            <video id="video" width="100%" height="100%" autoplay></video>
-            <!-- Dont for get to link your JavaScript -->
-            <script src="./main.js" async></script>
-
+            <h1>QR 코드 리더</h1>
+    
+            <div id="output">
+    
+                <div id="outputMessage">
+    
+                    QR코드를 카메라에 노출시켜 주세요
+    
+                </div>
+    
+                <div id="outputLayer" hidden>
+    
+                    <span id="outputData"></span>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
+        <div>&nbsp;</div>
+    
+        <div>
+    
+            <h1>스캔</h1>
+    
+            <div id="frame">
+    
+                <div id="loadingMessage">
+    
+                    🎥 비디오 스트림에 액세스 할 수 없습니다<br/>웹캠이 활성화되어 있는지 확인하십시오
+    
+                </div>
+    
+                <canvas id="canvas"></canvas>
+    
+            </div>
+    
+        </div>
 
 
      <input type="text" class="codes shadow blur" type='password' placeholder="부스 코드를 입력해 주세요.">
