@@ -76,6 +76,10 @@ button {
     margin-top: 20px;
 }
 
+video {
+    background-color: black;
+}
+
 .box {
     width: 80%;
     position: relative;
