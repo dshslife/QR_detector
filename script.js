@@ -65,10 +65,11 @@ function Login() {
       alert('올바른 비밀번호가 아닙니다.');
     } else {
       localStorage.setItem('Booth', K.slice(2, 6));
-      location.href = '/main.html';
+      location.href = 'main.html';
     }
 }
 
+$('#ID').text(localStorage.getItem("Booth"));
 
 
 $('.k1').on('click', function() {
@@ -138,7 +139,9 @@ $('.k3').on('click', function() {
 
 
 
-$('.k3').on('click', function() {
+$('.k4').on('click', function() {
+  $('#status').text("원할");
+
   var bo_ID = localStorage.getItem('Booth');
   
   if (bo_ID == null) {
@@ -150,10 +153,13 @@ $('.k3').on('click', function() {
            method: "POST", 
            dataType: "json"
           });
+  
 });
 
-$('.k4').on('click', function() {
+$('.k5').on('click', function() {
+  $('#status').text("준비중");
   var bo_ID = localStorage.getItem('Booth');
+
   if (bo_ID == null) {
     alert("비정상적 접근");
     return;
@@ -166,6 +172,8 @@ $('.k4').on('click', function() {
 });
 
 $('.k6').on('click', function() {
+  $('#status').text("혼잡");
+
   var bo_ID = localStorage.getItem('Booth');
   if (bo_ID == null) {
     alert("비정상적 접근");
