@@ -1,5 +1,4 @@
 var str = "";
-
 document.addEventListener("DOMContentLoaded", function() {
   var video = document.createElement("video");		
   var canvasElement = document.getElementById("canvas");
@@ -47,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                   console.log(code.data);
                                   if (code.data != null) {
                                     str = code.data;
+                                    $('#ID-t').text(str);
                                   }
                                   // return을 써서 함수를 빠져나가면 QR코드 프로그램이 종료된다.
                                   // return;
@@ -72,18 +72,21 @@ function Login() {
 
 
 $('.k1').on('click', function() {
-  $("#scr").text("1점")
+  $("#scr").text("1점");
+  if (!confirm(str + "\n점수를 부여하시겠습니까?")) {
+    return;
+  }
   var bo_ID = localStorage.getItem('Booth');
   if (bo_ID == null) {
     alert("비정상적 접근");
     return;
   }
-  if (str == null) {
-    alert("인식가능한 QR코드가 존재하지 않음.")
+  if (str == "") {
+    alert("인식가능한 QR코드가 존재하지 않음.");
   }
 
   $.ajax({ url: "/booth", 
-           data: { 'booth': bo_ID, 'code':str }, 
+           data: { 'booth': bo_ID, 'code':str, 'point':1 }, 
            method: "POST", 
            dataType: "json"
           });
@@ -91,18 +94,21 @@ $('.k1').on('click', function() {
 
 
 $('.k2').on('click', function() {
-  $("#scr").text("2점")
+  $("#scr").text("2점");
+  if (!confirm(str + "\n점수를 부여하시겠습니까?")) {
+    return;
+  }
   var bo_ID = localStorage.getItem('Booth');
   if (bo_ID == null) {
     alert("비정상적 접근");
     return;
   }
-  if (str == null) {
-    alert("인식가능한 QR코드가 존재하지 않음.")
+  if (str == "") {
+    alert("인식가능한 QR코드가 존재하지 않음.");
   }
 
   $.ajax({ url: "/booth", 
-           data: { 'booth': bo_ID, 'code':str }, 
+           data: { 'booth': bo_ID, 'code':str, 'point':2 }, 
            method: "POST", 
            dataType: "json"
           });
@@ -110,18 +116,21 @@ $('.k2').on('click', function() {
 
 
 $('.k3').on('click', function() {
-  $("#scr").text("3점")
+  $("#scr").text("3점");
+  if (!confirm(str + "\n점수를 부여하시겠습니까?")) {
+    return;
+  }
   var bo_ID = localStorage.getItem('Booth');
   if (bo_ID == null) {
     alert("비정상적 접근");
     return;
   }
-  if (str == null) {
-    alert("인식가능한 QR코드가 존재하지 않음.")
+  if (str == "") {
+    alert("인식가능한 QR코드가 존재하지 않음.");
   }
 
   $.ajax({ url: "/booth", 
-           data: { 'booth': bo_ID, 'code':str }, 
+           data: { 'booth': bo_ID, 'code':str, 'point':1 }, 
            method: "POST", 
            dataType: "json"
           });
@@ -131,6 +140,7 @@ $('.k3').on('click', function() {
 
 $('.k3').on('click', function() {
   var bo_ID = localStorage.getItem('Booth');
+  
   if (bo_ID == null) {
     alert("비정상적 접근");
     return;
