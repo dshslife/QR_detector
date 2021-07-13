@@ -70,10 +70,10 @@ function Login() {
 }
 
 $('#ID').text(localStorage.getItem("Booth"));
-
+bo_ID = localStorage.getItem("Booth");
 
 $('.k1').on('click', function() {
-  $("#scr").text("1점");
+  $("#scr").text("3점");
   if (!confirm(str + "\n점수를 부여하시겠습니까?")) {
     return;
   }
@@ -117,7 +117,7 @@ $('.k2').on('click', function() {
 
 
 $('.k3').on('click', function() {
-  $("#scr").text("3점");
+  $("#scr").text("1점");
   if (!confirm(str + "\n점수를 부여하시겠습니까?")) {
     return;
   }
@@ -141,9 +141,6 @@ $('.k3').on('click', function() {
 
 $('.k4').on('click', function() {
   $('#status').text("원할");
-
-  var bo_ID = localStorage.getItem('Booth');
-  
   if (bo_ID == null) {
     alert("비정상적 접근");
     return;
@@ -158,8 +155,6 @@ $('.k4').on('click', function() {
 
 $('.k5').on('click', function() {
   $('#status').text("준비중");
-  var bo_ID = localStorage.getItem('Booth');
-
   if (bo_ID == null) {
     alert("비정상적 접근");
     return;
@@ -173,8 +168,6 @@ $('.k5').on('click', function() {
 
 $('.k6').on('click', function() {
   $('#status').text("혼잡");
-
-  var bo_ID = localStorage.getItem('Booth');
   if (bo_ID == null) {
     alert("비정상적 접근");
     return;
