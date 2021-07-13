@@ -88,9 +88,8 @@ $('.k1').on('click', function() {
 
   $.ajax({ url: "/booth", 
           
-           data: { 'booth': bo_ID, 'code':str, 'point':1 }, 
+           data: { 'booth': bo_ID, 'code':str, 'point':1,           data:JSON.stringify({'list':savedData}) }, 
            method: "POST", 
-          data:JSON.stringify({'list':savedData}), 
           dataType: "json"
           });
 });
@@ -111,9 +110,8 @@ $('.k2').on('click', function() {
   }
 
   $.ajax({ url: "/booth", 
-           data: { 'booth': bo_ID, 'code':str, 'point':2 }, 
+           data: { 'booth': bo_ID, 'code':str, 'point':2,           data:JSON.stringify({'list':savedData})  }, 
            method: "POST", 
-            data:JSON.stringify({'list':savedData}), 
 
            dataType: "json"
           });
@@ -135,9 +133,8 @@ $('.k3').on('click', function() {
   }
 
   $.ajax({ url: "/booth", 
-           data: { 'booth': bo_ID, 'code':str, 'point':1 }, 
+           data: { 'booth': bo_ID, 'code':str, 'point':1,           data:JSON.stringify({'list':savedData})  }, 
            method: "POST", 
-          data:JSON.stringify({'list':savedData}), 
 
            dataType: "json"
           });
@@ -152,9 +149,8 @@ $('.k4').on('click', function() {
     return;
   }
   $.ajax({ url: "/api/set", 
-           data: { 'code': bo_ID, 'busy':0 }, 
+           data: { 'code': bo_ID, 'busy':0,           data:JSON.stringify({'list':savedData})  }, 
            method: "POST", 
-          data:JSON.stringify({'list':savedData}), 
 
            dataType: "json"
           });
@@ -168,9 +164,8 @@ $('.k5').on('click', function() {
     return;
   }
   $.ajax({ url: "/api/set", 
-           data: { 'code': bo_ID, 'busy':1 }, 
+           data: { 'code': bo_ID, 'busy':1,           data:JSON.stringify({'list':savedData})  }, 
            method: "POST", 
-          data:JSON.stringify({'list':savedData}), 
 
            dataType: "json"
           });
@@ -183,9 +178,8 @@ $('.k6').on('click', function() {
     return;
   }
   $.ajax({ url: "/api/set", 
-           data: { 'code': bo_ID, 'busy':2 }, 
+           data: { 'code': bo_ID, 'busy':2,           data:JSON.stringify({'list':savedData})  }, 
            method: "POST", 
-          data:JSON.stringify({'list':savedData}), 
 
            dataType: "json"
           });
