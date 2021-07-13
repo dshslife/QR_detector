@@ -88,7 +88,7 @@ $('.k1').on('click', function() {
 
   $.ajax({ url: "/booth", 
           
-           data: JSON.stringify({ 'booth': bo_ID, 'code':str, 'point':1}), 
+           data: JSON.stringify({ 'booth': bo_ID, 'code':str, 'point':3}), 
            method: "POST", 
           dataType: "json"
           });
