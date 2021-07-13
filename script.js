@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if(video.readyState === video.HAVE_ENOUGH_DATA) {
                 loadingMessage.hidden = true;
                 canvasElement.hidden = false;
-                outputContainer.hidden = false;
                 // 읽어들이는 비디오 화면의 크기
                 canvasElement.height = video.videoHeight;
                  canvasElement.width = video.videoWidth;
@@ -44,12 +43,9 @@ document.addEventListener("DOMContentLoaded", function() {
                                   drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF0000");
                                   drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF0000");
                                   drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF0000");
-                                  outputMessage.hidden = true;
-                                  outputData.parentElement.hidden = false;
                                   // QR코드 메시지 출력
-                                  outputData.innerHTML = code.data;
                                   console.log(code.data);
-                                  if (code.data != nul) {
+                                  if (code.data != null) {
                                     str = code.data;
                                   }
                                   // return을 써서 함수를 빠져나가면 QR코드 프로그램이 종료된다.
@@ -57,8 +53,6 @@ document.addEventListener("DOMContentLoaded", function() {
                             }
                             // QR코드 인식에 실패한 경우 
                             else {
-                                  outputMessage.hidden = false;
-                                  outputData.parentElement.hidden = true;
                             }
                     }
               requestAnimationFrame(tick);
@@ -173,8 +167,3 @@ $('.k6').on('click', function() {
            dataType: "json"
           });
 });
-
-
-
-
-
