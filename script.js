@@ -88,7 +88,7 @@ $('.k1').on('click', function() {
 
   $.ajax({ url: "/booth", 
           
-           data: { 'booth': bo_ID, 'code':str, 'point':1,           data:JSON.stringify({'list':savedData}) }, 
+           data: JSON.stringify({ 'booth': bo_ID, 'code':str, 'point':1}), 
            method: "POST", 
           dataType: "json"
           });
@@ -110,7 +110,7 @@ $('.k2').on('click', function() {
   }
 
   $.ajax({ url: "/booth", 
-           data: { 'booth': bo_ID, 'code':str, 'point':2,           data:JSON.stringify({'list':savedData})  }, 
+           data: : JSON.stringify({ 'booth': bo_ID, 'code':str, 'point':2}), 
            method: "POST", 
 
            dataType: "json"
@@ -133,7 +133,7 @@ $('.k3').on('click', function() {
   }
 
   $.ajax({ url: "/booth", 
-           data: { 'booth': bo_ID, 'code':str, 'point':1,           data:JSON.stringify({'list':savedData})  }, 
+           data: : JSON.stringify({ 'booth': bo_ID, 'code':str, 'point':1}), 
            method: "POST", 
 
            dataType: "json"
@@ -149,7 +149,7 @@ $('.k4').on('click', function() {
     return;
   }
   $.ajax({ url: "/api/set", 
-           data: { 'code': bo_ID, 'busy':0,           data:JSON.stringify({'list':savedData})  }, 
+           data: : JSON.stringify({ 'code': bo_ID, 'busy':0}), 
            method: "POST", 
 
            dataType: "json"
@@ -164,7 +164,7 @@ $('.k5').on('click', function() {
     return;
   }
   $.ajax({ url: "/api/set", 
-           data: { 'code': bo_ID, 'busy':1,           data:JSON.stringify({'list':savedData})  }, 
+           data: : JSON.stringify({ 'code': bo_ID, 'busy':1}), 
            method: "POST", 
 
            dataType: "json"
@@ -178,7 +178,7 @@ $('.k6').on('click', function() {
     return;
   }
   $.ajax({ url: "/api/set", 
-           data: { 'code': bo_ID, 'busy':2,           data:JSON.stringify({'list':savedData})  }, 
+           data: : JSON.stringify({ 'code': bo_ID, 'busy':2}), 
            method: "POST", 
 
            dataType: "json"
