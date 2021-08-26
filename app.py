@@ -1,4 +1,5 @@
 from flask import Flask, render_template, session, redirect, request
+from flask.helpers import url_for
 from flask_socketio import SocketIO, emit, join_room, leave_room, rooms
 
 app = Flask(__name__)
@@ -9,6 +10,13 @@ socket_io = SocketIO(app)
 pw = {
     'awsdawd':'A-14'
 }
+
+@app.route('/.well-known/pki-validation/73CB797E44DA31859919D32AD4179231.txt')
+def cert():
+    f = open('73CB797E44DA31859919D32AD4179231.txt', 'r')
+    data = f.read()
+    f.close()
+    return data
 
 @app.route('/')
 def f1():
